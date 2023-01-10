@@ -5,5 +5,5 @@ do
 	HASHLST=$(git rev-list HEAD --date-order --reverse "$file" | tail -n 1)
 	DATEOLD=$(git show -s --format="%f, %ci, %an," $HASHOLD --)
 	DATELST=$(git show -s --format="%f, %ci, %an" $HASHLST --)
-	printf "%s, %s\n" "$file" "$DATEOLD $DATELST"
+	printf "%s, %s\n" "$file" "$DATEOLD $DATELST" >> github-list.csv
 done
